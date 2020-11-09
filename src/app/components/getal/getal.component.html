@@ -1,0 +1,28 @@
+
+<div class="container">
+
+
+
+  <p>Raad het getal, je hebt 10 beurten</p>
+
+
+
+
+
+  <div *ngIf="aantalBeurten<=0">
+    <h1>Random getal was:   {{randomNumber}}</h1>
+    <p>Geen beurten meer! :) </p>
+    <button (click)="reset()">Reset</button>
+  </div>
+
+
+      <input  type="number" [disabled]="aantalBeurten<=0" #ingegevenGetal/>
+
+
+
+  <br><br>
+  <button [disabled]="aantalBeurten<=0" (click)="welkGetal(ingegevenGetal.value)">Chek!</button>
+
+  <p>{{feedback}}</p>
+
+  <br> <br> <br>
